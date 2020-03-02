@@ -1,0 +1,37 @@
+<% include ./../partials/header%>
+<section class="section features">
+    <div class="login-box">
+        <div class="row">
+            <div class="u-margin-bottom-medium u-center-text">
+                <h2 class="heading-secondary u-margin-bottom-small">Level 27</h2>
+                <img src="/img/ghanta_1.png" alt="img l27" class="login-box__img" id="img1">
+                <img src="/img/ghanta_2.png" alt="img l27" class="login-box__img" id="img2">
+                <p class="paragraph" id="p">
+                        
+                </p>
+            </div>
+        </div>
+    </div>
+    <script>
+        var img1=document.getElementById("img1");
+        var img2=document.getElementById("img2");
+        img1.style.display="none";
+        img2.style.display="none";
+        var para=document.getElementById("p");
+        var count=0;
+        para.onclick=function(){
+            if(count==0){
+                img1.style.display="block";
+                img2.style.display="none";
+                count++;
+            }
+            else if(count==1){
+                img1.style.display="none";
+                img2.style.display="block";
+                count--;
+
+            }
+        }
+    </script>
+</section>
+<% include ./../partials/footer%>

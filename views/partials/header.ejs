@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title><%=level%></title>
+    <meta name="theme-color" content="#232323">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/landing.css">
+    <link rel="stylesheet" href="/stylesheets/register.css">
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    canvas {
+        position: fixed;
+        z-index: -1;
+        display: inline-block;
+        box-sizing: inherit;
+
+    }
+</style>
+
+<body>
+    <canvas id="c"></canvas>
+
+    <div class="navigation">
+        <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+
+        <label for="navi-toggle" class="navigation__button">
+            <span class="navigation__icon">&nbsp;</span>
+        </label>
+
+        <div class="navigation__background">&nbsp;</div>
+
+        <nav class="navigation__nav">
+            <ul class="navigation__list">
+                <li class="navigation__item">
+                    <a href="/leaderboard" class="navigation__link">
+                        <span>&emsp;</span>Leaderboard&emsp;</a>
+                </li>
+                <li class="navigation__item">
+                    <a href="/answer-log" class="navigation__link">
+                        <span>&emsp;</span>Answer log&emsp;</a>
+                </li>
+                <li class="navigation__item">
+                    <a href="/rules" class="navigation__link">
+                        <span>&emsp;</span>Rules&emsp;</a>
+                </li>
+                <li class="navigation__item">
+                    <a href="/resume" class="navigation__link">
+                        <span style="padding-left: 10px">&emsp;</span>Play&emsp;</a>
+                </li>
+                <li class="navigation__item">
+                        <a href="/aboutus" class="navigation__link">
+                            <span style="padding-left: 10px">&emsp;</span>About Us&emsp;</a>
+                </li>
+                <li class="navigation__item">
+                    <a href="/logout" class="navigation__link">
+                        <span>&emsp;</span>Logout&emsp;</a>
+                </li>
+            </ul>
+        </nav>
+    </div>

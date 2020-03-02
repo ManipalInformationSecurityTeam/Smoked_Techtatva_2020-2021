@@ -1,0 +1,9 @@
+.section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+  .column {
+    min-width: 45vw;
+  }
+  

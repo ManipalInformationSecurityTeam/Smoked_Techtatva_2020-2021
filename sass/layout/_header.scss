@@ -1,0 +1,109 @@
+.header {
+    height: 91vh;
+    background-image: linear-gradient(
+       to right bottom,
+       rgba($color-grey-dark-2, 0.2),
+        rgba($color-grey-dark-3, 0.3));
+    //url(../img/hero-small.jpg);
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    
+    
+    @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
+            only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+            only screen and (min-width: 125em) {
+                height:100vh;
+    }
+
+    @include respond(phone) {
+        height:100vh;
+    
+    }
+    &__logo-box1{
+        position:absolute;
+        top:77vh;
+        left: 37vw;
+
+        @include respond(big-desktop){
+            left:42vw;
+        }
+        @include respond(tab-land){
+            left:38vw;
+        }
+        @include respond(tab-port){
+            left:37vw;
+        }
+        @include respond(phone){
+            left:26vw;
+        }
+        
+    }
+    
+    &__logo1 {
+        height: 5rem;
+
+    }
+
+    &__logo-box {
+        position: absolute;
+        top: 1.5rem;
+        left: 0rem;
+        @include respond(tab-port) {
+            top: 0rem;
+            left: 1rem;
+        
+        }
+    }
+
+
+    &__logo {
+        height: 10rem;
+        
+        @include respond(tab-port) {
+            height:15rem
+        }
+        @include respond(phone) {
+            display: none;
+        
+        }
+    }
+    &__logo-box2 {
+        position: absolute;
+        top: -1rem;
+        left: 85vw;
+        @include respond(big-desktop){
+            left:92vw;
+        }
+        @include respond(tab-land){
+            left:82vw;
+        }
+        @include respond(tab-port) {
+            top: 1.5rem;
+            left: 88vw;
+        }
+    }
+
+
+    &__logo2 {
+        height: 20rem;
+        @include respond(phone) {
+            display: none;
+        
+        }
+        @include respond(tab-port) {
+            height:15rem
+        
+        }
+    }
+    
+    &__text-box {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+}
+    
+
