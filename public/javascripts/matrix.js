@@ -28,6 +28,8 @@ c.height = window.innerHeight;
 c.width = window.innerWidth;
 //chinese characters - taken from the unicode charset
 var chinese = "wearemis@twearemist#wearemist!wearemist(wearemist);wearemist;wearemist";
+// var chinese = "gonephising!sudowearemist";
+
 //converting the string into an array of single characters
 chinese = chinese.split("");
 var font_size = 10;
@@ -40,7 +42,7 @@ for (var x = 0; x < columns; x++)
 function draw() {
     ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
     ctx.fillRect(0, 0, c.width, c.height);
-    ctx.fillStyle = "#e3e4e5"; //green text
+    ctx.fillStyle = "#ffe400"; //yellow text
     ctx.font = font_size + "px arial";
     //looping over drops
     for (var i = 0; i < drops.length; i++) {

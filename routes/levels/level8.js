@@ -12,10 +12,10 @@ router.get('/', authenticatedMiddleware(), onAnswer.currentLevel(level), functio
 
 router.get('/:answer', authenticatedMiddleware(), onAnswer.currentLevel(level), onAnswer.insertIntoLog(level), function (req, res, next) {
     const uid = req.session.passport.user.user_id;
-    if (req.params.answer.toLowerCase() === 'ksivan') { //answer
+    if (req.params.answer.toLowerCase() === 'royalenfield') { //answer
         onAnswer.updateUserLevel(uid, level+1)
         .then(function() {
-            res.redirect('/twenty418'); //change redirection link
+            res.redirect('/jameswatt'); //change redirection link
         })
         .catch(function(error) {
             throw error;

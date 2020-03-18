@@ -27,7 +27,7 @@ router.post('/', alreadyAuthenticatedMiddleware(), function (req, res, next) {
     req.checkBody('username', 'Invalid username').isLength({ min: 5 });
     req.checkBody('college', 'Invalid college').isLength({ min: 2 });
     req.checkBody('name', 'Invalid name').isLength({ min: 3 });
-    req.checkBody('regno', 'Invalid regno').isLength({ min: 1 });
+    req.checkBody('regno', 'Invalid regno').isLength({ min: 9, max: 9 });
     req.checkBody('phone', 'Invalid phone number').isLength({ min: 10, max: 10});
     req.sanitize('username').escape();
     var errors = req.validationErrors();

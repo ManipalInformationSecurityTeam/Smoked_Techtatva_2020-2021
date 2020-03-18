@@ -17,7 +17,7 @@ router.get('/:answer', authenticatedMiddleware(), onAnswer.currentLevel(level), 
         .then(function() {
             //add the broacast for socket .io
             
-            res.redirect('/techtatva19'); //change redirection link
+            res.redirect('/techweek'); //change redirection link
         })
         .catch(function(error) {
             throw error;

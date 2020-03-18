@@ -103,16 +103,16 @@ app.use('/aboutus',aboutus)
 app.use('/howtoplay',howtoplay);
 app.use('/resume', resume);
 app.use('/firstone', level1);//updated
-app.use('/techtatva19', level2);//updated
-app.use('/open', level3);//updated
-app.use('/coin', level4);//updated
-app.use('/ex', level5);//updated
-app.use('/director', level6);//updated
-app.use('/alan', level7);//updated
-app.use('/moon', level8);//updated
-app.use('/twenty418', level9);//updated
-app.use('/minus', level10);//updated
-app.use('/eleveneleven', level11);//updated
+app.use('/techweek', level2);//updated
+app.use('/pub', level3);//updated
+app.use('/yum', level4);//updated
+app.use('/motto', level5);//updated
+app.use('/http', level6);//updated
+app.use('/sort', level7);//updated
+app.use('/Vrooommmm', level8);//updated
+app.use('/jameswatt', level9);//updated
+app.use('/moritzgarth', level10);//updated
+app.use('/password', level11);//updated
 app.use('/lithium', level12);//updated
 app.use('/alexmorgan',level13);//updated
 app.use('/shahidafridi',level14);//updated

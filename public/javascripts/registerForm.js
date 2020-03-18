@@ -29,7 +29,7 @@ function submitForm(event) {
     else if (password.valueOf() != c_password.valueOf()) {
         error.innerHTML = "Passwords not matching";
     }
-    else if (!regno.length > 0) {
+    else if (!regno.length == 9) {
         error.innerHTML = "Enter the registration number";
     }
     else if (phone.length != 10) {
