@@ -15,7 +15,7 @@ router.get('/:answer', authenticatedMiddleware(), onAnswer.currentLevel(level), 
     if (req.params.answer.toLowerCase() === '0k') { //answer
         onAnswer.updateUserLevel(uid, level+1)
         .then(function() {
-            res.redirect('/password'); //change redirection link
+            res.redirect('/password:'); //change redirection link
         })
         .catch(function(error) {
             throw error;

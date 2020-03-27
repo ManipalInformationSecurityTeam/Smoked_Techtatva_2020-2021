@@ -112,10 +112,10 @@ app.use('/sort', level7);//updated
 app.use('/Vrooommmm', level8);//updated
 app.use('/jameswatt', level9);//updated
 app.use('/moritzgarth', level10);//updated
-app.use('/password', level11);//updated
-app.use('/lithium', level12);//updated
-app.use('/alexmorgan',level13);//updated
-app.use('/shahidafridi',level14);//updated
+app.use('/password:', level11);//updated
+app.use('/bond', level12);//updated
+app.use('/12.31.99',level13);//updated
+app.use('/back',level14);//updated
 app.use('/fork',level15);//updated
 app.use('/mattdamon',level16);//updated
 app.use('/activation',level17);//updated
