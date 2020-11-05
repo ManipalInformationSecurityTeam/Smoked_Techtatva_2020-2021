@@ -55,12 +55,11 @@ var level30 = require('./routes/levels/level30');
 var level31 = require('./routes/levels/level31');
 
 var level32 = require('./routes/levels/level32');
-var level33 = require("./routes/levels/level23");
-var level34 = require("./routes/levels/level24");
-var level35 = require("./routes/levels/level25");
-var level36 = require("./routes/levels/level26");
-var level37 = require('./routes/levels/level27');
-var level38 = require('./routes/levels/level28');
+var level33 = require("./routes/levels/level33");
+var level34 = require("./routes/levels/level34");
+var level35 = require("./routes/levels/level35");
+var level36 = require("./routes/levels/level36");
+var level37 = require('./routes/levels/level37');
 var finish=require('./routes/levels/finish');
 
 var sorts = require("./routes/levels/sorts");//sorts fake page

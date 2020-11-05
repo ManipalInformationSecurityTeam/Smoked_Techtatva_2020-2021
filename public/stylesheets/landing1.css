@@ -393,7 +393,18 @@ ORDER: Base + typography > general layout + grid > page layout > components
         -webkit-transition: color 0.3s;
         transition: color 0.3s;
     }
-    
+    @media screen and (max-width: 1465px){
+      .link--smokedhead {
+        font-size: 3.5cm;
+        letter-spacing: 4.5px;
+      }
+    }
+    @media screen and (max-width: 1300px){
+      .link--smokedhead {
+        font-size: 3.2cm;
+        letter-spacing: 3.8px;
+      }
+    }
     .link--smokedhead:hover {
         color: #000000;   
     }
