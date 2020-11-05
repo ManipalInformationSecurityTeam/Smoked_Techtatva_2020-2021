@@ -42,7 +42,7 @@ html {
   }
 }
 #mainC .message h3 {
-  color: #afd33d;
+  color: #fff;;
   font-size: 1.1em;
   font-weight: lighter;
   line-height: 1;
@@ -61,10 +61,10 @@ html {
 #mainC .footer a {
   position: relative;
   flex: 1;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgb(255, 210, 11);;
   text-decoration: none;
   border-radius: 3px;
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  border: 1px solid rgb(255, 210, 11);;
   margin: 0 20px;
   text-align: center;
   padding: 10px 0;
@@ -85,6 +85,10 @@ html {
 #mainC .footer a:hover span {
   width: 310px;
   height: 310px;
+  color:rgb(255, 210, 11);
+}
+.resume{
+  color:rgb(255, 210, 11);
 }
 #mainC .footer a span {
   content: '';
@@ -110,6 +114,7 @@ html {
 }
 #mainC .footer .legal {
   text-align: center;
+  color: rgb(255, 210, 11);
   flex: 3;
   color: rgba(204, 204, 204, 0.5);
 }

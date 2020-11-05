@@ -3,7 +3,8 @@ const utf8 = require('utf8');
 
 function insertIntoLog (level) {
     return function(req, res, next) {
-        const username = "utkarsh";
+        // const username = "utkarsh";
+        const username = req.session.passport.user.user_id;
         const uid = req.session.passport.user.user_id;
         var answer = req.params.answer;
         answer = utf8.decode(answer);

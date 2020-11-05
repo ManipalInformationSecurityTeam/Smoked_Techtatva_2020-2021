@@ -12,10 +12,10 @@ router.get('/', authenticatedMiddleware(), onAnswer.currentLevel(level), functio
 
 router.get('/:answer', authenticatedMiddleware(), onAnswer.currentLevel(level), onAnswer.insertIntoLog(level), function (req, res, next) {
     const uid = req.session.passport.user.user_id;
-    if (req.params.answer.toLowerCase() === 'divideandconquer') { //answer
+    if (req.params.answer.toLowerCase() === 'time' || req.params.answer.toLowerCase() === 'clock'|| req.params.answer.toLowerCase() === 'watch') { //answer
         onAnswer.updateUserLevel(uid, level+1)
         .then(function() {
-            res.redirect('/password'); //change redirection link
+            res.redirect('/yum'); //change redirection link
         })
         .catch(function(error) {
             throw error;

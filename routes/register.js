@@ -18,16 +18,16 @@ router.get('/', alreadyAuthenticatedMiddleware(), function (req, res, next) {
 });
 router.post('/', alreadyAuthenticatedMiddleware(), function (req, res, next) {
 
-  var secretKey = "6LeqdrwUAAAAADbq5M3K2zXg411BbiDVNjDWLC3p";
+  var secretKey = "6LdvBd8ZAAAAAD4SeM0MDBawowcv7mz8ma5w68kX";
   var verificationUrl = "https://www.google.com/recaptcha/api/siteverify?secret=" + secretKey + "&response=" + req.body.recaptcha + "&remoteip=" + req.connection.remoteAddress;
   request(verificationUrl, function (error, response, body) {
    
     req.checkBody('email', 'Invalid email').isEmail();
-    req.checkBody('password', 'Invalid password').isLength({ min: 5 });
-    req.checkBody('username', 'Invalid username').isLength({ min: 5 });
-    req.checkBody('college', 'Invalid college').isLength({ min: 2 });
-    req.checkBody('name', 'Invalid name').isLength({ min: 3 });
-    req.checkBody('regno', 'Invalid regno').isLength({ min: 9, max: 9 });
+    req.checkBody('password', 'Invalid password').isLength({ min: 5, max: 40 });
+    req.checkBody('username', 'Invalid username').isLength({ min: 5, max: 40 });
+    req.checkBody('college', 'Invalid college').isLength({ min: 2, max: 40 });
+    req.checkBody('name', 'Invalid name').isLength({ min: 3, max: 40 });
+    req.checkBody('regno', 'Invalid regno').isLength({ min: 6, max: 12 });
     req.checkBody('phone', 'Invalid phone number').isLength({ min: 10, max: 10});
     req.sanitize('username').escape();
     var errors = req.validationErrors();

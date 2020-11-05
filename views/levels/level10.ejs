@@ -1,12 +1,666 @@
 <% include ./../partials/header%>
+
 <section class="section features">
     <div class="login-box">
         <div class="row">
             <div class="u-margin-bottom-medium u-center-text">
                 <h2 class="heading-secondary u-margin-bottom-small">Level 10</h2><br>
-                <img src="/img2/10.jpg" alt="img l10" class="login-box__img">
+               
+                <style>
+                    @import url('https://fonts.googleapis.com/css?family=Exo');
+                
+                /* html {
+                  font-family: Exo, sans-serif;
+                  font-size: 36px;
+                  text-align: center;
+                  background-color: #BDC3C7;
+                  color: #3A539B;
+                }
+                 */
+                .green {
+                  color: rgb(255, 208, 0);
+                }
+                
+                .grid-wrapper {
+                  display: inline-block;
+                  margin: 0 auto;
+                  position: relative;
+                }
+                h1{
+                  color: rgb(0, 0, 0);
+                }
+                .display {
+                  margin-bottom: 30px;
+                  color: rgb(0, 0, 0);
+                }
+                
+                .choice {
+                  background-color:rgb(0, 0, 0);
+                  position: absolute;
+                  z-index: 2;
+                  top: 56%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  width: 300px;
+                  line-height: 100px;
+                  border: 3px solid rgb(255, 208, 0);
+                  box-shadow: 0px 0px 100px;
+                }
+                
+                .ex, .oh {
+                  cursor: pointer;
+                  font-size: 60px;
+                  padding: 20px
+                }
+                
+                .board {
+                  width: 400px;
+                  height: 400px;
+                  display: grid;
+                  grid-template-columns: repeat(3, 1fr);
+                  grid-template-rows: repeat(3, 1fr);
+                  grid-gap: 2px;
+                }
+                
+                .tic {
+                  font-size: 72px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  user-select: none;
+                  cursor: pointer;
+                }
+                
+                .one {
+                  border-right: 3px solid rgb(255, 208, 0);
+                  border-bottom: 3px solid rgb(255, 208, 0);
+                }
+                
+                .two {
+                  border-left: 3px solid rgb(255, 208, 0);
+                  border-right: 3px solid rgb(255, 208, 0);
+                  border-bottom: 3px solid rgb(255, 208, 0);
+                }
+                
+                .three {
+                  border-bottom: 3px solid rgb(255, 208, 0);
+                  border-left: 3px solid rgb(255, 208, 0);
+                }
+                
+                .four {
+                  border-bottom: 3px solid rgb(255, 208, 0);
+                  border-right: 3px solid rgb(255, 208, 0);
+                  border-top: 3px solid rgb(255, 208, 0);
+                }
+                
+                .five {
+                  border: 3px solid rgb(255, 208, 0);
+                }
+                
+                .six {
+                  border-left: 3px solid rgb(255, 208, 0);
+                  border-top: 3px solid rgb(255, 208, 0);
+                  border-bottom: 3px solid rgb(255, 208, 0);
+                }
+                
+                .seven {
+                  border-right: 3px solid rgb(255, 208, 0);
+                  border-top: 3px solid rgb(255, 208, 0);
+                }
+                
+                .eight {
+                  border-right: 3px solid rgb(255, 208, 0);
+                  border-top: 3px solid rgb(255, 208, 0);
+                  border-left: 3px solid rgb(255, 208, 0);
+                }
+                
+                .nine {
+                  border-top: 3px solid rgb(255, 208, 0);
+                  border-left: 3px solid rgb(255, 208, 0);
+                }
+                
+                .selection {
+                  margin: 30px;
+                  display: flex;
+                  justify-content: center;
+                  user-select: none;
+                }
+                
+                .xoro {
+                  margin-right: 100px;
+                  cursor: default;
+                }
+                
+                .reset {
+                  margin-left: 100px;
+                  cursor: pointer;
+                  color: rgb(0, 0, 0);
+                }
+                
+                .footer {
+                  margin-top: 30px;
+                  text-align: center;
+                }
+                
+                .footer a {
+                  text-decoration: none;
+                  font-size: 20px;
+                  color: #3A539B;
+                }
+                </style>
+                
+                            <div class="container">
+                            
+                                <h1>TicTacToe</h1>
+                                
+                                <div class="grid-wrapper">
+                                
+                                <div class="display">Start</div>
+                                
+                                <div class="choice">
+                                    Please choose<br>
+                                    <span class="ex">X</span> or <span class="oh">O</span>
+                                </div>
+                                
+                                <div class="board">
+                                    <div class="tic one" id="1"></div>
+                                    <div class="tic two" id="2"></div>
+                                    <div class="tic three" id="3"></div>
+                                    <div class="tic four" id="4"></div>
+                                    <div class="tic five" id="5"></div>
+                                    <div class="tic six" id="6"></div>
+                                    <div class="tic seven" id="7"></div>
+                                    <div class="tic eight" id="8"></div>
+                                    <div class="tic nine" id="9"></div>
+                                </div>
+                                </div>
+                                
+                                <div class="selection">
+                                <div class="xoro"></div>
+                                <div class="reset">
+                                    Reset
+                                </div>
+                                </div>
+                                
+                                
+                                
+                            </div>
+
+                            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                <script>
+
+
+
+                    $(document).ready(function(){
+                    
+                    // This will put the X and O for whatever player has it.
+                    var player;
+                    var comp;
+                    
+                    // Variable for whether the game has started or not.
+                    var gameStart = false;
+                    
+                    // Boolean for whether the player is going first or not.
+                    var playerFirst;
+                    
+                    // A flag for if it is the player's turn
+                    var playerTurn;
+                    
+                    // Variable to determine whether the computer has made a choice of the AI.
+                    var computerChoice;
+                    
+                    var didWin = false;
+                    
+                    // This little function randomly calculates who goes first. Then displays that choice on the screen.
+                    function randomStart() {
+                    
+                    // The random selection of true or false
+                    playerFirst = Boolean(Math.floor(Math.random() * 2));
+                    
+                    // If that selection is true, we make it the player's turn.
+                    if (playerFirst === true) {
+                      
+                      $(".display").text("Your Turn!");
+                      playerTurn = true;
+                      
+                      // Otherwise, its the computer's turn.
+                    } else {
+                      
+                      $(".display").text("Computer's Turn!");
+                      playerTurn = false;
+                      
+                      setTimeout(computerTurn, 1000);
+                      
+                    }
+                    
+                    }
+                    
+                    // This resets the board only and gives a random player the start.
+                    function resetBoard() {
+                    
+                    // makes each space clear.
+                    $(".one").text("");
+                    $(".two").text("");
+                    $(".three").text("");
+                    $(".four").text("");
+                    $(".five").text("");
+                    $(".six").text("");
+                    $(".seven").text("");
+                    $(".eight").text("");
+                    $(".nine").text("");
+                    
+                    $(".display").text("New Game!");
+                    
+                    playerFirst = NaN;
+                    didWin = false;
+                    
+                    // Random player gets the start.
+                    randomStart();
+                    
+                    }
+                    
+                    // This will reset everything for the game.
+                    function resetEverything() {
+                    
+                     // makes each space clear.
+                    $(".one").text("");
+                    $(".two").text("");
+                    $(".three").text("");
+                    $(".four").text("");
+                    $(".five").text("");
+                    $(".six").text("");
+                    $(".seven").text("");
+                    $(".eight").text("");
+                    $(".nine").text("");
+                    
+                    $(".display").text("New Game!");
+                    
+                    playerFirst = NaN;
+                    didWin = false;
+                    
+                    // Makes the choice box available.
+                    $(".choice").css("visibility", "visible");
+                    
+                    // Clears the little reminder text.
+                    $(".xoro").text("");
+                    
+                    // Stops the game.
+                    gameStart = false;
+                    
+                    // The players are reset.
+                    player = "";
+                    comp = "";
+                    playerFirst = NaN;
+                    
+                    //Put on a display that the game reste button has been selected.
+                    $(".display").text("Game Reset");
+                    
+                    }
+                    
+                    // if a winning combination is triggered, this checks to see if a player has won.
+                    function playerCheck(first, second, third) {
+                    
+                    if ($(first).text() === comp && $(second).text() === comp && $(third).text() === comp) {
+                            
+                      $(".display").text("Computer Wins!");
+                      checkflag = true;
+                      didWin = true;
+                      setTimeout(resetBoard, 1000);
+                      
+                    } else if ($(first).text() === player && $(second).text() === player && $(third).text() === player) {
+                                
+                      $(".display").text("You Win! Password:simple");
+                      checkflag = true;
+                      didWin = true;
+                      setTimeout(resetBoard, 1000);
+                      
+                    } else {
+                      
+                      return;
+                      
+                    }
+                    
+                    }
+                    
+                    // This will check if the selection is the winning one.
+                    function checkWin() {
+                    
+                    var first, second, third;
+                    var checkFlag = false;
+                    
+                    if ($(".one").text() !== "" && $(".two").text() !== "" && $(".three").text() !== "") {
+                      
+                      first = ".one";
+                      second = ".two";
+                      third = ".three";
+                      
+                      playerCheck(first, second, third);
+                      
+                    }
+                    
+                    if ($(".one").text() !== "" && $(".four").text() !== "" && $(".seven").text() !== "") {
+                      
+                      first = ".one";
+                      second = ".four";
+                      third = ".seven";
+                      
+                      playerCheck(first, second, third);
+                      
+                    }
+                    
+                    if ($(".one").text() !== "" && $(".five").text() !== "" && $(".nine").text() !== "") {
+                      
+                      first = ".one";
+                      second = ".five";
+                      third = ".nine";
+                      
+                      playerCheck(first, second, third);
+                      
+                    }
+                    
+                    if ($(".two").text() !== "" && $(".five").text() !== "" && $(".eight").text() !== "") {
+                      
+                      first = ".two";
+                      second = ".five";
+                      third = ".eight";
+                      
+                      playerCheck(first, second, third);
+                      
+                    }
+                    
+                    if ($(".three").text() !== "" && $(".five").text() !== "" && $(".seven").text() !== "") {
+                      
+                      first = ".three";
+                      second = ".five";
+                      third = ".seven";
+                      
+                      playerCheck(first, second, third);
+                      
+                    }
+                    
+                    if ($(".three").text() !== "" && $(".six").text() !== "" && $(".nine").text() !== "") {
+                      
+                      first = ".three";
+                      second = ".six";
+                      third = ".nine";
+                      
+                      playerCheck(first, second, third);
+                      
+                    }
+                    
+                    if ($(".four").text() !== "" && $(".five").text() !== "" && $(".six").text() !== "") {
+                      
+                      first = ".four";
+                      second = ".five";
+                      third = ".six";
+                      
+                      playerCheck(first, second, third);
+                      
+                    }
+                    
+                    if ($(".seven").text() !== "" && $(".eight").text() !== "" && $(".nine").text() !== "") {
+                      
+                      first = ".seven";
+                      second = ".eight";
+                      third = ".nine";
+                      
+                      playerCheck(first, second, third);
+                      
+                    }
+                    
+                    if (($(".one").text() !== "" && $(".two").text() !== "" && $(".three").text() !== "" && $(".four").text() !== "" && $(".five").text() !== "" && $(".six").text() !== "" && $(".seven").text() !== "" && $(".eight").text() !== "" && $(".nine").text() !== "") && checkFlag === false) {
+                      
+                      $(".display").text("It's a Draw!");
+                      didWin = true;
+                      setTimeout(resetBoard, 1000);
+                      
+                    }
+                    
+                    }
+                    
+                    function randomChoice() {
+                    
+                    var choice = Math.ceil(Math.random() * 9);
+                    var choiceID = "#" + choice;
+                    
+                    if ($(choiceID).text() !== "") {
+                      
+                      randomChoice();
+                      
+                    } else {
+                      
+                      $(choiceID).text(comp);
+                      
+                    }
+                    
+                    }
+                    
+                    // This is the AI program for the computer player.
+                    function computerTurn() {
+                    
+                    computerChoice = false;
+                    
+                    if (playerFirst === false) {
+                      
+                      randomChoice();
+                      computerChoice = true;
+                      playerFirst = NaN;
+                      
+                    }
+                    
+                    if (($(".two").text() === player && $(".three").text() === player) || ($(".four").text() === player && $(".seven").text() === player) || ($(".five").text() === player && $(".nine").text() === player)) {
+                      
+                      if ($(".one").text() === "" && computerChoice === false) {
+                        
+                        $(".one").text(comp);
+                        computerChoice = true;
+                        
+                      }
+                      
+                    } 
+                    
+                    if (($(".one").text() === player && $(".three").text() === player) || ($(".five").text() === player && $(".eight").text() === player)) {
+                      
+                      if ($(".two").text() === "" && computerChoice === false) {
+                        
+                        $(".two").text(comp);
+                        computerChoice = true;
+                        
+                      }
+                      
+                    }
+                    
+                    if (($(".one").text() === player && $(".two").text() === player) || ($(".five").text() === player && $(".seven").text() === player) || ($(".six").text() === player && $(".nine").text() === player)) {
+                      
+                      if ($(".three").text() === "" && computerChoice === false) {
+                        
+                        $(".three").text(comp);
+                        computerChoice = true;
+                        
+                      }
+                      
+                    }
+                    
+                    if (($(".one").text() === player && $(".seven").text() === player) || ($(".five").text() === player && $(".six").text() === player)) {
+                      
+                      if ($(".four").text() === "" && computerChoice === false) {
+                        
+                        $(".four").text(comp);
+                        computerChoice = true;
+                        
+                      }
+                      
+                    }
+                    
+                    if (($(".one").text() === player && $(".nine").text() === player) || ($(".two").text() === player && $(".eight").text() === player) || ($(".three").text() === player && $(".seven").text() === player) || ($(".four").text() === player && $(".six").text() === player)) {
+                      
+                      if ($(".five").text() === "" && computerChoice === false) {
+                        
+                        $(".five").text(comp);
+                        computerChoice = true;
+                        
+                      }
+                      
+                    }
+                    
+                    if (($(".four").text() === player && $(".five").text() === player) || ($(".three").text() === player && $(".nine").text() === player)) {
+                      
+                      if ($(".six").text() === "" && computerChoice === false) {
+                        
+                        $(".six").text(comp);
+                        computerChoice = true;
+                        
+                      }
+                      
+                    }
+                    
+                    if (($(".one").text() === player && $(".four").text() === player) || ($(".three").text() === player && $(".five").text() === player) || ($(".eight").text() === player && $(".nine").text() === player)) {
+                      
+                      if ($(".seven").text() === "" && computerChoice === false) {
+                        
+                        $(".seven").text(comp);
+                        computerChoice = true;
+                        
+                      }
+                      
+                    }
+                    
+                    if (($(".two").text() === player && $(".five").text() === player) || ($(".seven").text() === player && $(".nine").text() === player)) {
+                      
+                      if ($(".eight").text() === "" && computerChoice === false) {
+                        
+                        $(".eight").text(comp);
+                        computerChoice = true;
+                        
+                      }
+                      
+                    }
+                    
+                    if (($(".one").text() === player && $(".five").text() === player) || ($(".seven").text() === player && $(".eight").text() === player) || ($(".three").text() === player && $(".six").text() === player)) {
+                      
+                      if ($(".nine").text() === "" && computerChoice === false) {
+                        
+                        $(".nine").text(comp);
+                        computerChoice = true;
+                        
+                      }
+                      
+                    } 
+                    
+                    if (computerChoice === false) {
+                      
+                      randomChoice();
+                      computerChoice = true;
+                      
+                    }
+                    
+                    $(".display").text("Your Turn!");
+                    playerTurn = true;
+                    computerChoice = false;
+                    
+                    checkWin();
+                    
+                    }
+                    
+                    // When we click on the button, it resets everything.
+                    $(".reset").on("click", function() {
+                    
+                    // Run that function
+                    resetEverything();
+                    
+                    });
+                    
+                    // This is for the X selection button
+                    $(".ex").on("click", function(){
+                    
+                    // The player is X
+                    player = "X";
+                    
+                    // The computer is O
+                    comp = "O";
+                    
+                    // Hides the choice box.
+                    $(".choice").css("visibility", "hidden");
+                    
+                    // Sets the reminder text to X.
+                    $(".xoro").text("X");
+                    
+                    // Random starting player.
+                    randomStart();
+                    
+                    // Game started.
+                    gameStart = true;
+                    
+                    });
+                    
+                    // This is for the O selection button
+                    $(".oh").on("click", function() {
+                    
+                    // The player is O
+                    player = "O";
+                    
+                    // The computer is X
+                    comp = "X";
+                    
+                    // Hides the choice box.
+                    $(".choice").css("visibility", "hidden");
+                    
+                    // Sets the reminder text to X.
+                    $(".xoro").text("O");
+                    
+                    // Random starting player.
+                    randomStart();
+                    
+                    // Game started.
+                    gameStart = true;
+                    
+                    });
+                    
+                    // This places a mark for the player
+                    $(".tic").on("click", function() {
+                    
+                    // If the game isn't started, don't do anything.
+                    if (gameStart === false || playerTurn === false) {
+                      
+                      return;
+                      
+                    }
+                    
+                    // If this space already has a selection
+                    if ($(this).text() !== "") {
+                      
+                      // Display that there has to be another selection and don't do anything.
+                      $(".display").text("Choose another space.");
+                      return;
+                      
+                    }
+                    
+                    // Place a mark in the place according to the players choice.
+                    $(this).text(player);
+                    
+                    // The computer's turn.
+                    playerTurn = false;
+                    
+                    // Make it the computer's turn.
+                    $(".display").text("Computer's Turn!");
+                    
+                    checkWin();
+                    
+                    if (didWin === false) {
+                      setTimeout(computerTurn, 1000);
+                    }
+                    });
+                    
+                    });
+                    
+                    
+                        </script>
+                            
+  
+  
             </div>
         </div>
     </div>
+    
 </section>
 <% include ./../partials/footer%>

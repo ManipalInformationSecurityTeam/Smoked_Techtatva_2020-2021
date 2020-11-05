@@ -1,0 +1,35 @@
+﻿General Rules
+
+Smoked starts at 0000 hours on 6th Nov and ends at 2359 hours on 8th Nov. (Total: 72 hrs).
+
+Make sure you’re registered on smoked.wearemist.in  before the game starts so you don’t waste time later.
+
+This is an individual event.
+
+Any attempts to DOS or abuse the servers will get you banned from the game.
+
+Sharing of answers among players is not allowed and will lead to immediate disqualification.
+
+Incase of any queries/issues contact one of the admins through Discord.
+
+Gameplay rules/tutorial
+
+https://smoked.wearemist.in/levelname/answer
+
+is the general format of the answer
+levelname stands for This corresponds to the  current level name
+answer stands for the answer you give for the level
+
+Basically you need to append your url to the current url with /answer
+
+eg question is on url https://smoked.wearemist.in/example
+if the answer is abc it will be filled as
+https://smoked.wearemist.in/levelname/example/abc
+
+
+If its right you will get a page leading to a new question or else it will show you a page where it displays wrong answer and you can press either the back button or try again on it
+Explore the depth of webpage for hints and references.
+Additional hints will be added with time and need.
+For viewing source code on mobile phones, add view-source:smoked.wearemist.in
+
+

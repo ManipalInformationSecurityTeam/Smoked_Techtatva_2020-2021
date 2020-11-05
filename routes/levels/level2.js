@@ -12,7 +12,7 @@ router.get('/', authenticatedMiddleware(), onAnswer.currentLevel(level), functio
 
 router.get('/:answer', authenticatedMiddleware(), onAnswer.currentLevel(level), onAnswer.insertIntoLog(level), function (req, res, next) {
     const uid = req.session.passport.user.user_id;
-    if (req.params.answer.toLowerCase() === 'gonephishing') { //answer
+    if (req.params.answer.toLowerCase() === 'transformingparadigms') { //answer
         onAnswer.updateUserLevel(uid, level+1)
         .then(function() {
             res.redirect('/pub'); //change redirection link

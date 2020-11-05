@@ -12,10 +12,10 @@ router.get('/', authenticatedMiddleware(), onAnswer.currentLevel(level), functio
 
 router.get('/:answer', authenticatedMiddleware(), onAnswer.currentLevel(level), onAnswer.insertIntoLog(level), function (req, res, next) {
     const uid = req.session.passport.user.user_id;
-    if (req.params.answer.toLowerCase() === 'theedge') { //answer
+    if (req.params.answer.toLowerCase() === 'theedge' || req.params.answer.toLowerCase() === 'edge') { //answer
         onAnswer.updateUserLevel(uid, level+1)
         .then(function() {
-            res.redirect('/yum'); //change redirection link
+            res.redirect('/language'); //change redirection link
         })
         .catch(function(error) {
             throw error;

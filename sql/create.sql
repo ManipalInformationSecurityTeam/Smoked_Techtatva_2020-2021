@@ -17,7 +17,7 @@ ALTER TABLE `tbl_user`
   ADD PRIMARY KEY (`user_id`);
 
   ALTER TABLE `tbl_user`
-  MODIFY `user_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `user_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 CREATE TABLE `level_route` (
   `level` bigint(20) DEFAULT NULL,
@@ -32,31 +32,43 @@ TRUNCATE TABLE `level_route`;
 
 INSERT INTO `level_route` (`level`, `route`) VALUES
 (1, '/firstone'),
-(2, '/techtatva19'),
-(3, '/open'),
-(4, '/coin'),
-(5, '/ex'),
-(6, '/director'),
-(7, '/alan'),
-(8, '/moon'),
-(9, '/twenty418'),
-(10, '/minus'),
-(11, '/eleveneleven'),
-(12, '/lithium'),
-(13,'/alexmorgan'),
-(14,'/shahidafridi'),
-(15,'/fork'),
-(16,'/mattdamon'),
-(17,'/activation'),
-(18,'/julius'),
-(19,'/nlogn'),
-(20,'/code'),
-(21,'/coredumped'),
-(22,'/pipe'),
-(23,'/years'),
-(24,'/blank'),
-(25,'/km'),
-(26,'/finish');
+(2, '/techtatva20'),
+(3, '/pub'),
+(4, '/language'),
+(5, '/motto'),
+(6, '/ryandahl'),
+(7, '/12.31.99'),
+(8, '/rockstar'),
+(9, '/V.I'),
+(10, '/tictactoe'),
+(11, '/valorant'),
+(12, '/ledger'),
+(13,'/rot'),
+(14,'/carpeuel'),
+(15,'/http'),
+(16,'/letitload'),
+(17,'/hiddeninplainsight'),
+(18,'/sort'),
+(19,'/sorts'),  
+(20,'/yum'),
+(21,'/droptek'),
+(22,'/bigblue'),
+(23,'/security'),
+(24,'/silentf'),
+(25,'/style'),
+(26,'/gibberish'),
+(27,'/ghanta'),
+(28,'/iiiiiiiiiii'),
+(29,'/windmill'),
+(30,'/km'),
+(31,'/eyrie'),
+(32,'/nlogn'),
+(33,'/code'),
+(34,'/coredumped'),
+(35,'/pipe'),
+(36,'/years'),
+(37,'/blank'),
+(38,'/finish');
 
 ALTER TABLE `tbl_user` ADD `time_stamp` DATETIME on update CURRENT_TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP AFTER `current_level`;
 

@@ -9,8 +9,8 @@ var transporter = nodemailer.createTransport({
     service: 'Gmail',
       host: 'smtp.gmail.com',
     auth: {
-      user: 'smoked.turing@gmail.com',
-      pass: 'sudo7777root'
+      user: 'turing.techtatva20@gmail.com',
+      pass: 'QN34!QYqXQd8v9rU'
     }
   });
 
@@ -21,7 +21,7 @@ router.get('/', function(req, res, next) {
 router.post('/sendCode', function(req, res, next) {
     var code = Math.floor(100000 + Math.random() * 900000);
     const email = req.body.email;
-    var secretKey = "6LeqdrwUAAAAADbq5M3K2zXg411BbiDVNjDWLC3p";
+    var secretKey = "6LdvBd8ZAAAAAD4SeM0MDBawowcv7mz8ma5w68kX";
     var verificationUrl = "https://www.google.com/recaptcha/api/siteverify?secret=" + secretKey + "&response=" + req.body.recaptcha + "&remoteip=" + req.connection.remoteAddress;
     request(verificationUrl, function (error, response, body) {
         body = JSON.parse(body);

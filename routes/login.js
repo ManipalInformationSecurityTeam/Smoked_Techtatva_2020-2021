@@ -19,7 +19,7 @@ router.get('/', alreadyAuthenticatedMiddleware(), function (req, res, next) {
 
 router.post('/', onAnswer.isBanned(), function (req, res, next) {
   
-  var secretKey = "6LeqdrwUAAAAADbq5M3K2zXg411BbiDVNjDWLC3p";
+  var secretKey = "6LdvBd8ZAAAAAD4SeM0MDBawowcv7mz8ma5w68kX";
   var verificationUrl = "https://www.google.com/recaptcha/api/siteverify?secret=" + secretKey + "&response=" + req.body.recaptcha + "&remoteip=" + req.connection.remoteAddress;
   request(verificationUrl, function (error, response, body) {
     body = JSON.parse(body);

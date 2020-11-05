@@ -15,7 +15,7 @@ router.get('/:answer', authenticatedMiddleware(), onAnswer.currentLevel(level), 
     if (req.params.answer.toLowerCase() === 'alayne' ) { //answer
         onAnswer.updateUserLevel(uid, level+1)
         .then(function() {
-            res.redirect('/finish'); //change redirection link
+            res.redirect('/nlogn'); //change redirection link
         })
         .catch(function(error) {
             throw error;

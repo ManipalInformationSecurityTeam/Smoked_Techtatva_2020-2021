@@ -12,10 +12,10 @@ router.get('/', authenticatedMiddleware(), onAnswer.currentLevel(level), functio
 
 router.get('/:answer', authenticatedMiddleware(), onAnswer.currentLevel(level), onAnswer.insertIntoLog(level), function (req, res, next) {
     const uid = req.session.passport.user.user_id;
-    if (req.params.answer.toLowerCase() === 'apache') { //answer
+    if (req.params.answer.toLowerCase() === 'dijkstras' || req.params.answer.toLowerCase() === 'dijkstra' || req.params.answer.toLowerCase() === 'dijkstra\'s' || req.params.answer.toLowerCase() === 'dijkstra\'salgorithm') { //answer
         onAnswer.updateUserLevel(uid, level+1)
         .then(function() {
-            res.redirect('/sort'); //change redirection link
+            res.redirect('/12.31.99'); //change redirection link
         })
         .catch(function(error) {
             throw error;

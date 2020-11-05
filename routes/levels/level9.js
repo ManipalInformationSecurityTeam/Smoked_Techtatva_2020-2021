@@ -15,7 +15,7 @@ router.get('/:answer', authenticatedMiddleware(), onAnswer.currentLevel(level), 
     if (req.params.answer.toLowerCase() === 'powershell') { //answer
         onAnswer.updateUserLevel(uid, level+1)
         .then(function() {
-            res.redirect('/moritzgarth'); //change redirection link
+            res.redirect('/tictactoe'); //change redirection link
         })
         .catch(function(error) {
             throw error;

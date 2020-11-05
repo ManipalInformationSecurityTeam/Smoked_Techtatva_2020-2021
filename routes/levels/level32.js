@@ -4,7 +4,7 @@ var authenticatedMiddleware = require('../../config/authMiddleware');
 var onAnswer = require('../../config/onAnswer');
 const level = 32;  //change level here !important
 var levelpassed = "Smoked | Level " + level;
-var message = "you did something with your life";
+var message = "Wrong Answer";
 
 router.get('/', authenticatedMiddleware(), onAnswer.currentLevel(level), function (req, res) {
     res.render('levels/level' + level, {level: levelpassed});
@@ -12,10 +12,10 @@ router.get('/', authenticatedMiddleware(), onAnswer.currentLevel(level), functio
 
 router.get('/:answer', authenticatedMiddleware(), onAnswer.currentLevel(level), onAnswer.insertIntoLog(level), function (req, res, next) {
     const uid = req.session.passport.user.user_id;
-    if (req.params.answer.toLowerCase() === '@#$lkbgjsrgjlrsbglkzbjiewG' ) { //answer
+    if (req.params.answer.toLowerCase() === 'divideandconquer') { //answer
         onAnswer.updateUserLevel(uid, level+1)
         .then(function() {
-            res.redirect('/'); //change redirection link
+            res.redirect('/code'); //change redirection link
         })
         .catch(function(error) {
             throw error;
