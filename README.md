@@ -8,7 +8,5 @@ Answers, hints, images  also on -https://drive.google.com/drive/folders/1PPFETZM
 3. Start browser on port 4000
    
 # Possible errors
-1. mysql not started
-   Solution -  sudo systemctl start mysqld (change this based on distro
-2. Google captcha
-    Solution - Either comment it or create new one
+1. mysql not started  Solution -  sudo systemctl start mysqld (change this based on distro)
+2. Google captcha  Solution - Either comment it or create new one
