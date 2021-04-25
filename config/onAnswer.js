@@ -62,7 +62,7 @@ function isBanned() {
                         }
                     });
                 } else {
-                    res.render('ban', {message: 'the high septon has banned you for 4 hours for ' + rows[0].reason});
+                    res.render('ban', {message: 'the high septon has banned you ' + rows[0].reason});
                 }
             }
         });
@@ -79,7 +79,7 @@ function currentLevel(level) {
             } else if (rows[0].current_level > level) {
                 res.redirect('/resume');
             } else {
-                banUser(uid, 'level jump', 4)
+                banUser(uid, 'level jump', 24)
                 .then(function() {
                     req.logOut();
                     req.session.destroy();
