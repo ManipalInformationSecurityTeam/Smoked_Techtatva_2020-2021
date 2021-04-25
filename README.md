@@ -4,8 +4,10 @@ Answers, hints, images  also on -https://drive.google.com/drive/folders/1PPFETZM
 
 # Steps to run
 1. Npm install
-2. Npm start
-3. Start browser on port 4000
+2. Create database named smoked
+3. Modify env file
+4. Npm start
+5. Start browser on port 4000
    
 # Possible errors
 1. mysql not started\
